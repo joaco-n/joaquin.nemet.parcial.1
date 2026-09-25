@@ -1,171 +1,54 @@
 void main() {
 
-    /*//buscar metodos basandose en la clase.
-System.out.print("Ingrese el ID del avión: ");
-int idBuscado = teclado.nextInt();
+    gestion_del_videojuego gestion = new gestion_del_videojuego();
+    npc arquero_1 = new arqueros("legolas", 150, 10);
+    npc arquero_2 = new arqueros("link", 125, 10);
+    npc guerrero_1 = new guerrero("cloud strife", 200, "legion del fin del mundo");
+    npc guerrero_2 = new guerrero("kratos", 210, "legion dorada");
+    npc escudero_1 = new escudero("steve rogers", 400, 200);
+    npc escudero_2 = new escudero("reinhardt", 500, 300);
+    npc dragon_1 = new dragones("pollux", 666);
+    npc dragon_2 = new dragones("smaug", 800);
 
-avion avionEncontrado = null;
-for (avion a : ezeiza.getAviones()) {
-if (a.getId() == idBuscado) { // compara el ID
-avionEncontrado = a;
-break;
-}
-}
+    System.out.printf(arquero_1.toString() + "\n");
+    System.out.printf(arquero_1.obtener_habilidar() + "\n");
+    System.out.printf("estoy entrenando." + "\n");
+    System.out.printf("mejore mi habilidad a distancia" + "\n");
 
-if (avionEncontrado != null) {
-if (avionEncontrado instanceof avion_comercial) {
-avion_comercial c = (avion_comercial) avionEncontrado;
-System.out.println(((avion_comercial) avionEncontrado).comida());
-System.out.println(c.mantas());
-} else if (avionEncontrado instanceof avion_privado) {
-avion_privado p = (avion_privado) avionEncontrado;
-System.out.println("quieres ver tv?(y/n)");
-char tv = teclado.nextLine().charAt(0);
-System.out.println(p.comida());
-System.out.println(p.mantas());
-System.out.println("¿Se esta viendo tv?: " + p.tv(tv));
-} else if (avionEncontrado instanceof avion_carga) {
-avion_carga ca = (avion_carga) avionEncontrado;
-System.out.println(ca.cargar());
-System.out.println(ca.descargar());
-} else if (avionEncontrado instanceof avion_militar) {
-avion_militar m = (avion_militar) avionEncontrado;
-System.out.println("Avión militar, no tiene métodos extra.");
-}
-} else {
-System.out.println("No se encontró avión con ese ID.");
-}
-break;*/
+    System.out.printf(arquero_2.toString() + "\n");
+    System.out.printf(arquero_2.obtener_habilidar() + "\n");
+    System.out.printf("estoy entrenando." + "\n");
+    System.out.printf("mejore mi habilidad a distancia" + "\n");
 
-    /*//agregar y eliminar algo dentro de un arraylist de una clase
-public String agregar_aviones(avion avion){
-if(avion.getId() + 1 > capacidad_de_operacion){
-return "no hay capacidad para almacenar este avion";
-} else {
-aviones.add(avion);
-avion.atterizar();
-return "avion agregado: " + avion.toString();
-}
-}
+    System.out.printf(guerrero_1.toString() + "\n");
+    System.out.printf(guerrero_1.obtener_habilidar() + "\n");
+    System.out.printf("estoy entrenando." + "\n");
+    System.out.printf("mejore mi habilidad cuerpo a cuerpo" + "\n");
 
-public String eliminar_avion(int id){
-avion aux = aviones.remove(id);
-return "avion eliminado: " + aux.toString();
-}*/
+    System.out.printf(guerrero_2.toString() + "\n");
+    System.out.printf(guerrero_2.obtener_habilidar() + "\n");
+    System.out.printf("estoy entrenando." + "\n");
+    System.out.printf("mejore mi habilidad cuerpo a cuerpo" + "\n");
 
-    /*//elegir algo dentro de una linkedlist y que se muestre.
-@Override
-public void reproducir() {
-if (lista.isEmpty()) {
-System.out.println("La lista está vacía.");
-return;
-}
+    System.out.printf(escudero_1.toString() + "\n");
+    System.out.printf(escudero_1.obtener_habilidar() + "\n");
 
-Scanner sc = new Scanner(System.in);
-System.out.println("Elija la canción a reproducir:");
-for (int i = 0; i < lista.size(); i++) {
-System.out.println((i + 1) + ". " + lista.get(i));
-}
+    System.out.printf(escudero_2.toString() + "\n");
+    System.out.printf(escudero_2.obtener_habilidar() + "\n");
 
-int opcion = sc.nextInt();
-if (opcion < 1 || opcion > lista.size()) {
-System.out.println("Opción inválida.");
-return;
-}
+    System.out.printf(dragon_2.toString() + "\n");
+    System.out.printf(dragon_2.obtener_habilidar() + "\n");
 
-System.out.println("Reproduciendo: " + lista.get(opcion-1));
-}*/
+    System.out.printf(dragon_1.toString() + "\n");
+    System.out.printf(dragon_1.obtener_habilidar() + "\n");
 
-    /* //eliminar de una linkedlist
-@Override
-public void eliminar_cancion() {
-if (lista.isEmpty()) {
-System.out.println("No hay canciones para eliminar.");
-return;
-}
-
-Scanner sc = new Scanner(System.in);
-System.out.println("Elija la canción a eliminar:");
-for (int i = 0; i < lista.size(); i++) {
-System.out.println((i + 1) + ". " + lista.get(i));
-}
-
-int opcion = sc.nextInt();
-if (opcion < 1 || opcion > lista.size()) {
-System.out.println("Opción inválida.");
-return;
-}
-
-lista.remove(opcion - 1);
-System.out.println("Canción eliminada.");
-}*/
-
-/*//por si el usuario tiene que elegir cosas dentro de un enum
-System.out.println("Ingrese el género (1. ROCK, 2. TRAP, 3. JAZZ, 4. HIPHOP, 5. POP, 6. METAL, 7. CLASICA):");
-int genero = teclado.nextInt();
-genero_musical genero2 = null;
-teclado.nextLine();
-switch (genero) {
-case 1:
-genero2 = genero_musical.ROCK;
-break;
-case 2:
-genero2 = genero_musical.TRAP;
-break;
-case 3:
-genero2 = genero_musical.JAZZ;
-break;
-case 4:
-genero2 = genero_musical.HIP_HOP;
-break;
-case 5:
-genero2 = genero_musical.POP;
-case 6:
-genero2 = genero_musical.METAL;
-break;
-case 7:
-genero2 = genero_musical.CLASICA;
-break;
-default:
-System.out.println("opcion invalida. seleccionando POP por defecto.");
-genero2 = genero_musical.POP;
-}*/
-
-/*   Scanner teclado = new Scanner(System.in);
-
-    boolean continuar = true;
-    while (continuar) {
-        System.out.println("Ingrese ejercicio a realizar (1-8):");
-        int ejercicio = teclado.nextInt();
-        teclado.nextLine();
-        switch (ejercicio) {
-            case 1:
-            case 2:
-            case 3:
-                System.out.printf("cerrando el programa.");
-                continuar = false;
-                break;
-            default:
-                System.out.println("Ejercicio no encontrado.");
-                break;
-
-        }
-    }*/
-
-
-/*//recorrer un arraylist con for each
-public static void mostrarLista(ArrayList lista) {
-for (String s : lista) System.out.println(s);
-}*/
-
-
-    System.out.printf("a");
-
-
-
-
-
-
+    gestion.agregar_personaje(arquero_1);
+    gestion.agregar_personaje(arquero_2);
+    gestion.agregar_personaje(guerrero_1);
+    gestion.agregar_personaje(guerrero_2);
+    gestion.mostrar_personajes();
+    System.out.printf(gestion.iniciar_combate(guerrero_2) + "\n");
+    System.out.printf("cantidad de dragones: " + 2 + "\n");
 
 
 
